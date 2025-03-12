@@ -1,0 +1,6 @@
+edu\uvg\Pokemon.class
+edu\uvg\PokemonCollection.class
+edu\uvg\PokemonService.class
+edu\uvg\Main.class
+edu\uvg\MapFactory.class
+edu\uvg\PokemonDataLoader.class
