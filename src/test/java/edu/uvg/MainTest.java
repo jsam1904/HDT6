@@ -6,11 +6,20 @@ import org.junit.Test;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * Clase de pruebas para la clase Main.
+ * 
+ * @autor
+ * Javier Alvarado - 24546
+ */
 public class MainTest {
     private PokemonService service;
     private Map<String, Pokemon> pokemonData;
     private PokemonCollection userCollection;
 
+    /**
+     * Configuración inicial para las pruebas.
+     */
     @Before
     public void setUp() {
         pokemonData = new HashMap<>();
@@ -21,6 +30,9 @@ public class MainTest {
         service = new PokemonService(pokemonData, userCollection);
     }
 
+    /**
+     * Prueba para el método addPokemonToUserCollection.
+     */
     @Test
     public void testAddPokemonToUserCollection() {
         String response1 = service.addPokemonToUserCollection("Pikachu");
@@ -31,6 +43,9 @@ public class MainTest {
         assertEquals("Error: El Pokémon Bulbasaur no se encuentra en los datos.", response3);
     }
 
+    /**
+     * Prueba para el método getPokemonDetails.
+     */
     @Test
     public void testGetPokemonDetails() {
         String details = service.getPokemonDetails("Charmander");

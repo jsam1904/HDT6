@@ -5,12 +5,27 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Map;
 
+/**
+ * Clase encargada de cargar los datos de Pokémon desde un archivo.
+ * 
+ * @autor 
+ * Javier Alvarado - 24546
+ */
 public class PokemonDataLoader {
+
+    /**
+     * Carga los datos de Pokémon desde un archivo y los almacena en un Map.
+     * 
+     * @param filename  El nombre del archivo que contiene los datos de Pokémon.
+     * @param mapOption La opción para seleccionar la implementación de Map.
+     *                  1 para HashMap, 2 para TreeMap, 3 para LinkedHashMap.
+     * @return Un Map que contiene los datos de Pokémon cargados.
+     */
     public static Map<String, Pokemon> loadPokemonData(String filename, int mapOption) {
         Map<String, Pokemon> pokemonMap = MapFactory.getMapImplementation(mapOption);
         try (BufferedReader br = new BufferedReader(new FileReader(filename))) {
             String line;
-            line = br.readLine();
+            line = br.readLine(); // Leer la primera línea (encabezado)
             while ((line = br.readLine()) != null) {
                 String[] parts = line.split(",");
                 if (parts.length >= 3) {

@@ -4,10 +4,21 @@ import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
 
+/**
+ * Clase principal para la aplicación de gestión de Pokémon.
+ * 
+ * @autor
+ * Javier Alvarado - 24546
+ */
 public class Main {
-    private static final String DATA_FILE = "pokemon_data_pokeapi.csv"; // Actualizado
+    private static final String DATA_FILE = "pokemon_data_pokeapi.csv";
     private static final String USER_COLLECTION_FILE = "userCollection.ser";
 
+    /**
+     * Método principal que inicia la aplicación.
+     * 
+     * @param args Argumentos de la línea de comandos.
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
@@ -41,12 +52,12 @@ public class Main {
             switch (choice) {
                 case 1:
                     System.out.print("Ingrese el nombre del Pokémon a agregar: ");
-                    String addName = scanner.nextLine();
+                    String addName = scanner.nextLine().toLowerCase();
                     System.out.println(service.addPokemonToUserCollection(addName));
                     break;
                 case 2:
                     System.out.print("Ingrese el nombre del Pokémon para ver sus datos: ");
-                    String detailName = scanner.nextLine();
+                    String detailName = scanner.nextLine().toLowerCase();
                     System.out.println(service.getPokemonDetails(detailName));
                     break;
                 case 3:
@@ -67,7 +78,7 @@ public class Main {
                     break;
                 case 5:
                     System.out.print("Ingrese la habilidad a buscar: ");
-                    String ability = scanner.nextLine();
+                    String ability = scanner.nextLine().toLowerCase();
                     List<String> abilityList = service.getPokemonByAbility(ability);
                     if (abilityList.isEmpty()) {
                         System.out.println("No se encontraron Pokémon con la habilidad: " + ability);
