@@ -5,7 +5,7 @@ import java.util.Map;
 import java.util.Scanner;
 
 public class Main {
-    private static final String DATA_FILE = "pokemon.csv";
+    private static final String DATA_FILE = "pokemon_data_pokeapi.csv"; // Actualizado
     private static final String USER_COLLECTION_FILE = "userCollection.ser";
 
     public static void main(String[] args) {
